@@ -161,8 +161,8 @@ public class WifiPermissionsUtil {
         // Otherwise, Location Mode must be enabled and caller must have
         // Coarse Location permission to have access to location information.
         boolean canAppPackageUseLocation = isLegacyForeground(pkgName, minVersion)
-                || (isLocationModeEnabled(pkgName)
-                        && checkCallersLocationPermission(pkgName, uid));
+                || (/*isLocationModeEnabled(pkgName)
+                        &&*/ checkCallersLocationPermission(pkgName, uid));
         // If neither caller or app has location access, there is no need to check
         // any other permissions. Deny access to scan results.
         if (!canCallingUidAccessLocation && !canAppPackageUseLocation) {
